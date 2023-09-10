@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form | EasyMed</title>
+    <style>
+        body::after {
+    content: "";
+    background-image: url('/images/back.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    filter: blur(20px); /* Increased the blur value to 20px */
+    opacity: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/images/back.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            margin: 100px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .id {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        i {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            color: #ccc;
+        }
+        textarea {
+            resize: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 480px) {
+            .container {
+                margin: 20px auto;
+            }
+        }
+
+        input[type="text"], input[type="email"], textarea {
+        text-transform: uppercase;
+    }
+    
+    </style>
+    <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="add_review" method="post">
+            <h1>Give Your Feedback</h1>
+            <div class="id">
+                <label for="rwr_name">Full Name</label>
+                <input id="rwr_name" name="rwr_name" type="text" placeholder="Full name" required>
+            </div>
+            <div class="id">
+                <label for="rwr_email">Email Address</label>
+                <input id="rwr_email" name="rwr_email" type="email" placeholder="Email address" required>
+            </div>
+            <div class="id">
+                <label for="rwr_text">Your Feedback</label>
+                <textarea id="rwr_text" cols="15" name="rwr_text" rows="5" placeholder="Enter your opinions here..." required></textarea>
+            </div>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        .navbar-nav .nav-link:hover {
+            background: rgb(147, 231, 187);
+            color: #ed9191;
+            border-radius: 12px;
+        }
+        .review-panel {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review-panel-body {
+            background-color: #c6efc3;
+            padding: 15px;
+            border-radius: 0 0 15px 15px;
+        }
+        .review-panel-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #f3e3a3;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    text-transform: uppercase; /* Added this line */
+}
+
+.review-panel-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0056b3;
+    text-transform: uppercase; /* Added this line */
+}
+
+.review-panel-text {
+    color: #333;
+    text-transform: uppercase; /* Added this line */
+}
+
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>NIT-TRICHY Hospital</title>
+</head>
+<body>
+    <!-- MENU BAR -->
+
+    <hr>
+    <h1 style="color: darkorange; text-align: center;">Read Reviews Of Happy Customers</h1>
+    <hr>
+
+    <!-- List of customer reviews using cards -->
+    <div class="container">
+        <div class="row">
+            <% for(var result of results) { %>
+                <div class="col-md-6 col-lg-4 review-panel">
+                    <div class="review-panel-header"><%= result.rwr_name %></div>
+                    <div class="review-panel-body">
+                        <div class="review-panel-title"><%= result.rwr_email %></div>
+                        <div class="review-panel-text"><%= result.rwr_text %></div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

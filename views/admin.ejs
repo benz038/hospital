@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      .navbar-nav .nav-link:hover {
+          background: rgb(147, 231, 187);
+          color: #ed9191;
+          border-radius: 12px;
+      }
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>NIT-TRICHY Hospital</title>
+  </head>
+  <body>
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Welcome Admin</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="/">logout</a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <hr>
+      <h1 style="color: darkorange; text-align: center;">Appointment Of Patients</h1>
+      
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Appointment No</th>
+                  <th>Patient Name</th>
+                  <th>Doctor Name</th>
+                  <th>Patient No</th>
+                  <th>Patient Email</th>
+                  <th>Appointment Date</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% for(var result of results) { %>
+                  <tr>
+                      <td><%= result.appointment_id %></td>
+                      <td><%= result.cus_name %></td>
+                      <td><%= result.doctor_name %></td>
+                      <td><%= result.cus_no %></td>
+                      <td><%= result.cus_email %></td>
+                      <td>
+                        <% 
+                            var date = new Date(result.string_app_date);
+                            var day = date.getDate();
+                            var month = date.getMonth() + 1; // Months are zero-based, so we add 1
+                            var year = date.getFullYear();
+                        %>
+                        <%= day + '/' + month + '/' + year %>
+                    </td>
+                    
+                  </tr>
+              <% } %>
+          </tbody>
+      </table>
+  </div>
+  </body>
+</html>
